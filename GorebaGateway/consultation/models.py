@@ -1,8 +1,10 @@
 from django.db import models
 
+
 class Consultant(models.Model):
     name = models.CharField(max_length=255)
     bio = models.TextField()
+
 
 class Appointment(models.Model):
     consultant = models.ForeignKey(Consultant, on_delete=models.CASCADE)

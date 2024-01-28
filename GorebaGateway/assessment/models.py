@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class AssessmentForm(models.Model):
     user_name = models.CharField(max_length=255)
     user_email = models.EmailField()
