@@ -1,3 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
+from core.models import Core
+
+
+class CoreAdmin(admin.ModelAdmin):
+    list_display = [
+        'business_name', 'company', 'icon', 'status', 'updated_at'
+    ]
+
+
+admin.site.register(Core, CoreAdmin)

@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,6 +27,12 @@ SECRET_KEY = 'django-insecure-oml&os%r&!#^r=ref^*4%0)s5-2_*ij*34^o=i6s6p2$qs%+*2
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+MANAGERS = (
+    ('Hem Raj Regmi', "sangamsyabil@gmail.com"),
+)
+
+ADMINS = MANAGERS
 
 
 # Application definition
@@ -65,7 +72,7 @@ ROOT_URLCONF = 'GorebaGateway.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,18 +122,24 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static_files"),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'static_root')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'media_root')
+PROTECTED_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'protected_media_root')
+VENV_PATH = os.path.join(BASE_DIR)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

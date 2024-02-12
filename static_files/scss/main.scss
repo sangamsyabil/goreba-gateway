@@ -1,0 +1,11 @@
+// including variables and mixins
+@import "variables/_variables.scss";
+
+// including individual components
+@import "components/_appointment_form.scss";
+@import "components/_contact_form.scss";
+
+// including individual elements
+@import "elements/_banner.scss";
+@import "elements/_header.scss";
+@import "elements/_footer.scss";

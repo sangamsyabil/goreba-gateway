@@ -1,0 +1,15 @@
+:root {
+  --primary-color: #374794;
+  --secondary-color: #F66247;
+  --sub-color: #6C757D;
+  --attention-color: #FFC107;
+  --danger-color: #DC3545;
+  --success-color: #28A745;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=main.css.map */
